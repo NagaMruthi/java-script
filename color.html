@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head></head>  
+<body>
+
+    <button onclick="a()">red</button>
+    <button onclick="b()">black</button>
+    <button onclick="c()">blue</button>
+    <button onclick="d()">green</button>
+    <h1 onclick="my()" id="dd">html</h1>
+    <div id="k">
+    <button onclick="sa()">show</button>
+    <h2 onmousemove="hj()">go</h2>
+    <button onclick="increase()">increase</button>
+        <p id="f">0</p>
+        <button onclick="decrease()">decrease</button>
+    </div>
+    <script>
+        function a(){
+       
+       
+       
+            document.body.style.backgroundColor="red"
+        }
+        function b(){
+            document.body.style.backgroundColor="black"
+        }
+        function c(){
+            document.body.style.backgroundColor="blue"
+        }
+        function d(){
+            document.body.style.backgroundColor="green"
+        }
+       var x=document.getElementById("dd")
+        function my(){
+            x.innerHTML="oops";
+        }
+        function sa(){
+            var r=document.getElementById("k")
+            r.innerHTML="mnnvhdfisguie"
+
+           hi
+        }
+       /* function hj(){
+            alert("hi")
+        }*/
+        var g=document.getElementById("f")
+            function increase(){
+                var k= +g.innerHTML
+                console.log(typeof(k))
+                k++
+                g.innerHTML=k
+            
+            }
+
+            function decrease(){
+                var i= +g.innerHTML
+                i--
+                g.innerHTML=i
+            }
+    </script>
+</body>
+</html>

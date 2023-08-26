@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style></style>
+    </head>
+    <body>
+        <div id="ad"></div>
+        <input type="text" id="inp" placeholder="search for a word">
+        <span class="bi bi-search" onclick="search()"></span>
+        <div>
+            <ul id="dm"></ul>
+        </div>
+        <script>
+            var mp3ad=document.getElementById('ad')
+            var ulm=document.getElementById('dm')
+            var inpt=document.getElementById('inp')
+            var url="https://api.dictionaryapi.dev/api/v2/entries/en"
+            var w
+            function search()
+            {
+                ulm.innerHTML=""
+                w=inpt.value
+                axios.get(`${url}/${w}`)
+                .then(function(a)
+                {
+                    data=a.data[0]
+                    console.log(data)
+                    data.forEach(function(s)
+                    {
+                        var li1=document.createElement('li')
+                        var nm=document.createElement('span')
+                        var ad1=document.createElement('span')
+                        ad1.classList.add('bi')
+                        ad1.classList.add('bi-volume-down')
+                        ad1.style.border="1px solid black"
+                        ad1.style.width="15px"
+                        ad1.style.height="15px"
+                        ad1.onclick=function(s)
+                        {pl(s.phonetics[0].audio)}
+                        s.meanings.forEach(function(t)
+                        {
+                            var oli1=document.createElement('li')
+                            oli1.innerHTML=t.partOfSpeech
+                            ol1.appendChild(oli1)
+                            var ol2=document.createElement('ol')
+                            t.definitions.forEach(function(u)
+                            {
+                                var oli2=document.createElement('li')
+                                var oli2ex=document.createElement('p')
+                                oli2.innerHTML=u.definition
+                                oli2ex.innerHTML="Example: "+u.example
+                                oli2.appendChild(oli2ex)
+                                ol2.appendChild(oli2)
+                            })
+                            ol1.appendChild(ol2)
+                        })
+                        nm.innerHTML=s.word
+                        li1.appendChild(nm)
+                        li1.appendChild(ad1)
+                        li1.appendChild(ol1)
+                        ulm.appendChild(li1)
+                        console.log(ulm)
+                    }) 
+                })
+            }
+            function pl(mp3){
+                mp3ad.innerHTML=""
+                var aud=document.createElement('audio')
+                var audsou=document.createElement('source')
+                audsou.src=mp3
+                aud.appendChild(audsou)
+                mp3ad.appendChild(aud)
+                aud.play()
+            }
+        </script>
+    </body>
+</html>
+

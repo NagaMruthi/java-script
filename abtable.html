@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <button onclick="my()" >show</button>
+        <table border="1px solid">
+            <tr>
+                <th onclick="ad()">firstame</th>
+                <th onclick="bd()">lastname</th>
+                <th onclick="cd()">age</th>
+                <th onclick="dd()">gender</th>
+                <th onclick="ed()">city</th>
+                <th onclick="fd()">salary</th>
+                
+            </tr>
+            <tbody id="dd">
+            </tbody>
+        </table>
+        <script>
+            var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+                        /*function my(){*/
+                        var tab=document.getElementById("dd");
+                        gentable(people)
+                        function gentable(arr){
+                        tab.innerHTML=""
+                        arr.forEach(function(s,i){
+                        var tr1=document.createElement("tr");
+                        var td1=document.createElement("td");
+                        td1.innerHTML=s.firstname;
+                        tr1.appendChild(td1);
+                        var td2=document.createElement("td");
+                        td2.innerHTML=s.lastname;
+                        tr1.appendChild(td2);
+                        var td3=document.createElement("td");
+                        td3.innerHTML=s.age;
+                        tr1.appendChild(td3);
+                        var td4=document.createElement("td");
+                        td4.innerHTML=s.gender;
+                        tr1.appendChild(td4);
+                        var td5=document.createElement("td");
+                        td5.innerHTML=s.city;
+                        tr1.appendChild(td5);
+                        var td6=document.createElement("td");
+                        td6.innerHTML=s.salary;
+                        tr1.appendChild(td6);
+                        tab.appendChild(tr1);
+                        });
+                    }
+                
+                   function ad(){
+                        people.sort(function(a,b){
+                            if(a.firstname>b.firstname){
+                                return 1;
+                            }
+                            if(a.firstname<b.firstname){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                    function bd(){
+                        people.sort(function(a,b){
+                            if(a.lastname>b.lastname){
+                                return 1;
+                            }
+                            if(a.lastname<b.lastname){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                        function cd(){
+                        people.sort(function(a,b){
+                            if(a.age>b.age){
+                                return 1;
+                            }
+                            if(a.age<b.age){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                    function dd(){
+                        people.sort(function(a,b){
+                            if(a.gender>b.gender){
+                                return 1;
+                            }
+                            if(a.gender<b.gender){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                    function ed(){
+                        people.sort(function(a,b){
+                            if(a.city>b.city){
+                                return 1;
+                            }
+                            if(a.city<b.city){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                    function fd(){
+                        people.sort(function(a,b){
+                            if(a.salary>b.salary){
+                                return 1;
+                            }
+                            if(a.salary<b.salary){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                
+        </script>
+    </body>
+</html>

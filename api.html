@@ -1,0 +1,38 @@
+<html>
+    <head><script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <body>
+            <div id="main" class="d-flex flex-wrap"></div>
+            <script>
+                var main=document.getElementById("main")
+                var z=[];
+                  var url="https://www.themealdb.com/api/json/v1/1/list.php?c=list"
+                 axios.get(`${url}`)
+                 .then((res)=>{
+                    z=res.data.meals
+                    console.log(z)
+                    genUI(z)
+                 })
+                    function genUI(categorie){
+                        var x=document.getElementById("main")
+                        x.classList.add("badge")
+                        categorie.forEach((c,i) => {
+                            var span1=document.createElement("span");
+                            span1.classList.add("text-bg-primary");
+                            span1.style.margin="4px";
+                            span1.id=i
+                            span1.onclick=function(s,i){abc(i)}
+                            span1.innerHTML=c.strCategory;
+                            x.appendChild(span1)
+                        });
+                    }
+                    function abc(i){
+                        axios.get("https://www.themealdb.com/api/json/v1/1/categories.php").then(function(d){
+                            console.log(d.data.males)
+                        })
+                    }
+            </script>
+        </body>
+    </head>
+</html>

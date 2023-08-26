@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form name="studentform" onsubmit="event.preventDefault">
+            firstsname:
+            <input name="firstname" type="text" onkeyup="updatefirstname(event)">
+            <button type="button" onclick="abc(event)">submit</button>
+        </form>
+        <script>
+            var values={
+                firstname:"",
+            }
+            function updatefirstname(e){
+                values.firstname=e.target.value
+            }
+            function abc(){
+                console.log(values);
+            }
+        </script>
+    </body>
+</html>

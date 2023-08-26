@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #f{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="f"> 
+       name: <input type="text" id="a"><br><br>
+       number:<input type="number" id="b"><br><br>
+       email: <input type="email" id="c"><br><br>
+       pic: <input type="url" id="d"><br><br>
+       <button onclick="mysubmit()">submit</button>
+       </div>
+       <div id="e" style="text-align: center;"></div>
+        <script>
+            var nm=document.getElementById("a");//name
+            var numb=document.getElementById("b");//number&age
+            var ema=document.getElementById("c");//email
+            var pic=document.getElementById("d");//pic
+            var div=document.getElementById("e");//div
+            var ar=[];
+            function genCard(){
+                div.innerHTML="";
+        ar.forEach(function(a,i){
+                var d=document.createElement("div");
+            d.style.border="2px solid",
+            d.style.width="fit-content"
+            d.style.backgroundColor="orange"
+
+            var image=document.createElement("img")
+            image.src=a.image
+            image.style.width="30px"
+            image.style.height="30px"
+            image.style.borderRadius="50%"
+            d.appendChild(image)
+
+
+       var p1=document.createElement("p")
+     p1.innerHTML="name:"
+     var sp1=document.createElement("span")
+     sp1.innerHTML=a.name;
+     p1.appendChild(sp1)
+     d.appendChild(p1)
+
+
+     var p2=document.createElement("p")
+     p2.innerHTML="number:"
+     var sp2=document.createElement("span")
+     sp2.innerHTML=a.number
+     p2.appendChild(sp2)
+     d.appendChild(p2)
+
+
+     var p3=document.createElement("p")
+     p3.innerHTML="email:"
+     var sp3=document.createElement("span")
+     sp3.innerHTML=a.email
+     p3.appendChild(sp3)
+     d.appendChild(p3)
+     div.appendChild(d);
+     var btn=document.createElement("button")
+     btn.innerHTML="delete";
+     btn.onclick=function(){
+        deletefn(i);
+     }
+     d.appendChild(btn);
+     div.appendChild(d)
+    })
+    }
+            function mysubmit(){
+                var obj={
+                    "name":nm.value,
+                    "number":numb.value,
+                    "email":ema.value,
+                    "image":pic.value
+                }
+                ar.push(obj);
+                genCard(ar);
+            }
+            function deletefn(i){
+                ar.splice(i,1);
+                genCard();
+            }
+        </script>
+    </body>
+</html>

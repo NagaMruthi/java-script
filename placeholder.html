@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <input type="text" onkeyup="xyz()" id="kl">
+    <button onclick="acen()">acending</button>
+    <button onclick="dec()">decending</button>
+    <table id="gh" border="1px">
+        <thead>
+            <tr>
+                <td>title</td>
+                <td>body</td>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+    <button onclick="my()">click</button>
+    <script>
+        var tb1=document.getElementById("tb");
+       var x=[];
+        function my(){
+            axios.get("https://jsonplaceholder.typicode.com/posts").then(function(r)
+            {
+               x=r.data;
+                console.log(x)
+               gentable(x)
+            })
+        }
+       function gentable(arr) {
+            tb1.innerHTML = ""
+             arr.forEach(function(place){
+                var tr1 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                td1.innerHTML = place.title;
+                tr1.appendChild(td1);
+                td2.innerHTML = place.body;
+                tr1.appendChild(td2);
+               tb1.appendChild(tr1);
+            })
+        }
+    function xyz(){
+            var r=document.getElementById("kl").value;
+           var n=x.filter(function(c,b){
+            return(c.title.startsWith(r))
+            console.log(r)
+            })
+            gentable(n);
+        }
+        function acen() {
+          var o=x.sort(function (a,b) {
+                if (a.title>b.title) {
+                    return 1;
+                }
+                if (a.title<b.title) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(o);
+        }
+        function dec() {
+       var z=x.sort(function (a,b) {
+                if (a.title<b.title) {
+                    return 1;
+                }
+                if (a.title>b.title) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(z);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        /* #kl li{
+            display: inline-block;
+        }  */
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <button onclick="my()">click</button>
+        <input type="text" onkeyup="gf()" id="w">
+        <button onclick="ace()">aeo</button>
+        <!-- <button onclick="de()">de</button> -->
+        <ul id="kl">
+        </ul>
+        <script>
+            var ps=[];
+            var ol=document.getElementById("kl")
+            function my(){
+            axios.get("https://jsonplaceholder.typicode.com/posts").then(function(res){
+               ps=res.data;
+                console.log(ps)
+                gen(ps);
+            })
+        }
+               function gen(arr)
+                 {
+                    ol.innerHTML="";
+                   arr.forEach(function(p)
+                  {
+                    var li1=document.createElement("li");
+                    li1.innerHTML="title::"+p.title;
+                    ol.appendChild(li1)
+                    var li2=document.createElement("li")
+                    li2.innerHTML="body::"+p.body;
+                    ol.appendChild(li2);
+                  })
+                }
+                function gf(){
+                    var d=document.getElementById("w").value;
+                   var j=ps.filter(function(a,b){
+                    console.log(d)
+                    return(a.title.startsWith(d))
+                   })
+                   gen(j);
+                }
+                function ace(){
+                    var w=ps.sort(function(a,b){
+                        if(a.body>b.body){
+                            return 1;
+                        }
+                        if(a.body<b.body){
+                            return -1;
+                        }
+                        return 0;
+                        
+                    })
+                    console.log(w)
+                  gen(w);
+                }
+        </script>
+    </body>
+</html>

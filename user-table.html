@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <input type="text" onkeyup="xyz()" id="kl">
+    <button onclick="acen()">acending</button>
+    <button onclick="dec()">decending</button>
+    <table id="gh" border="1px">
+        <thead>
+            <tr>
+                <th>company</th>
+                <th>id</th>
+                <th>name</th>
+                <th>username</th>
+                <th>email</th>
+                <th>website</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+    <button onclick="mycountry()">click</button>
+    <script>
+        var tb1=document.getElementById("tb")
+        var x=[];
+        function mycountry(){
+            axios.get("https://jsonplaceholder.typicode.com/users").then(function(ph){
+                x=ph.data;
+                console.log(x);
+                gentable(x)
+            })    
+        }
+        function gentable(arr) {
+            tb1.innerHTML = "";
+            arr.forEach(function(p){
+                var tr1 = document.createElement("tr");
+                var td1 = document.createElement("td")
+                var td2 = document.createElement("td")
+                var td3 = document.createElement("td")
+                var td4 = document.createElement("td")
+                var td5 = document.createElement("td")
+                var td6 = document.createElement("td")
+                var td7 = document.createElement("td")
+                td1.innerHTML = p.company.name;
+                td2.innerHTML = p.id;
+                td3.innerHTML = p.name;
+                td4.innerHTML = p.username;
+                td5.innerHTML = p.email;
+                td6.innerHTML = p.website;
+                td7.innerHTML = p.phone
+                tr1.appendChild(td1)
+                tr1.appendChild(td2);
+                tr1.appendChild(td3)
+                tr1.appendChild(td4)
+                tr1.appendChild(td5)
+                tr1.appendChild(td6)
+                tr1.appendChild(td7)
+              tb1.appendChild(tr1)  
+            })
+        }
+        function xyz(){
+            var r=document.getElementById("kl").value;
+           var n=x.filter(function(c,b){
+            return(c.company.name.startsWith(r))
+            console.log(r)
+            })
+            gentable(n);
+        }
+        function acen() {
+          var o=x.sort(function (a,b) {
+                if (a.phone> b.phone) {
+                    return 1;
+                }
+                if (a.phone<b.phone) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(o);
+        }
+        function dec() {
+       var z=x.sort(function (a,b) {
+                if (a.id<b.id) {
+                    return 1;
+                }
+                if (a.id>b.id) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(z);
+        }
+    </script>
+</body>
+</html>

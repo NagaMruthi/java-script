@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>India</h1>
+    <img src="" alt="" id = "dd" width="400px" height="500px">
+    <br>
+    <button onclick="prv()">Previous</button>
+    <button onclick="next()">Next</button>
+    <script>
+        var x = [
+            "https://kalingatv.com/wp-content/uploads/2017/04/Virat-Kohli-RCB.jpg",
+            "https://images.indianexpress.com/2019/11/ms-dhoni-759.jpg" ,
+            "https://odishabytes.com/wp-content/uploads/2018/02/VIRAT_KOHLI_JAN_2015_cropped.jpg",
+            "https://tse2.mm.bing.net/th?id=OIP.LqNi-7y8QNhXZZLlWpv_gwHaEK&pid=Api&P=0&h=180"
+                ]
+            var k = document.getElementById("dd")
+            var i=0; 
+            k.src=x[i]
+            function next(){ 
+                k.src=x[i];
+                if(i===x.length-1){
+                    i=-1
+                }
+                i++;
+                k.innerHTML=i
+            }
+            function prv(){
+                k.src=x[i];
+                if(i<=x.length-1){
+                    i=x.length-1
+                }
+                i--;
+                k.innerHTML=i
+            }
+        </script>
+        </body>
+        </html>

@@ -1,0 +1,80 @@
+<html>
+    <head></head>
+    <body style="background-color: pink;">
+        <form onsubmit="event.preventDefault()">
+            <table>
+                <tr>
+                    <th>Firstname :</th>
+                    <td><input type="text" id="a" placeholder="enter name"></td>
+                </tr>
+                <tr>
+                    <th>Mobile no. :</th>
+                    <td><input type="text" id="b" placeholder="enter mobile number"></td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td><input type="text" id="c" placeholder="enter email address"></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><button onclick="addContact()">submit</button></th>
+                </tr>
+            </table>
+            <div id="d" style="width:fit-content;"></div>
+        </form>
+        <ul id="a">
+
+        </ul>
+        <script>
+            var a = document.getElementById('a')
+            var b = document.getElementById('b')
+            var c = document.getElementById('c')
+            var d = document.getElementById('d')
+            var employees = []
+            function addCard(){
+                d.innerHTML=""
+                employees.forEach(function(s,i){
+                    var g = document.createElement('div')
+                    var tab = document.createElement('table')
+                    g.style.border="2px darkred solid"
+                    g.style.margin='10px'
+                    g.style.display="inline-block"
+                    tab.style.backgroundColor="orange"
+                    for(var m in s){
+                        var trc=document.createElement('tr')
+                        var td1=document.createElement('th')
+                        var td2=document.createElement('td')
+                        td1.innerHTML=m
+                        td2.innerHTML=s[m]
+                        trc.appendChild(td1)
+                        trc.appendChild(td2)
+                        tab.appendChild(trc)
+                    }
+                    var bttr=document.createElement('tr')
+                    var bttd=document.createElement('td')
+                    bttd.colSpan='2'
+                    bttd.innerHTML='DELETE'
+                    bttd.onclick=function(){
+                        deletefn(i)
+                    }
+                    bttr.appendChild(bttd)
+                    tab.appendChild(bttr)
+                    g.appendChild(tab)
+                    d.appendChild(g)
+                })
+            }
+            function addContact(){
+                var ob = {
+                    "firstname":a.value,
+                    "mobile_no":b.value,
+                    "email":c.value
+                }
+                employees.push(ob)
+                addCard()
+            }
+            function deletefn(i){
+                employees.splice(i,1)
+                addCard()
+            }
+        </script>
+    </body>
+</html>

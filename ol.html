@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>
+            rough work
+        </title>
+    </head>
+    <body>
+        <table border="1px">
+            <tr>
+                <th onclick="sort_of_name()">firstame</th>
+                <th onclick="sort_of_age()">age</th>
+            </tr>
+            <tbody id="tb"></tbody>
+        </table>
+        <script>
+            var student=[{
+                firstname: "zip",
+                age:200
+            },
+
+            {
+                firstname:"yellow",
+                age:150
+
+            },
+
+            {
+                firstname: "xerox",
+                age:1
+            },
+
+            {
+                firstname:"watermelon",
+                age: 19
+            }
+        
+        ]
+            var tb=document.getElementById("tb")
+            gentable(student);
+            
+
+           function gentable(abb){
+
+            tb.innerHTML=""
+            abb.forEach(function(s,i){
+             var table_row=document.createElement("tr")
+
+             var ntd= document.createElement("td")
+             ntd.innerHTML=s.firstname
+             table_row.appendChild(ntd)
+             var mtd=document.createElement("td")
+             mtd.innerHTML=s.age
+             table_row.appendChild(mtd)
+             tb.appendChild(table_row)
+        })
+
+        }
+        
+
+          function sort_of_age(){
+
+           student.sort(function(a,b){
+                if(a.age>b.age){
+                    return 1
+                    
+                }
+                if(a.age<b.age){
+                return -1
+                }
+                return 0
+            
+            })
+            gentable(student);
+        }
+           function sort_of_name(){
+        student.sort(function(a,b){
+     if(a.firstname>b.firstname){
+         return 1;
+          }
+     if(a.firstname<b.firstname){
+     return -1;
+     }
+     return 0
+ 
+ })
+ gentable(student)
+ }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forms</title>
+        <body>
+            <form onsubmit="event.preventDefault">
+                <input type="text" id="hg" placeholder="name">
+                <button onclick="my()"> add</button>
+            </form>
+            <script>
+                var x=document.getElementById("hg")
+                ar=[];
+                ar.innerHTML="";
+                ar.push(x);
+                
+                var y=document.createElement("ul");
+                var z=document.createElement("ul");
+                function my(){
+                    ar.forEach(function(s,i) {
+                       y.innerHTML=s;
+                       z.appendChild(y)
+                    });
+                }
+            </script>
+        </body>
+    </head>
+</html>

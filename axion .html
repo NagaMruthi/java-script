@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <input type="text" onkeyup="gf()" id="w">
+        <button onclick="my()">click</button>
+        <ul id="kl">
+        </ul>
+        <script>
+            var products=[];
+            var ol=document.getElementById("kl")
+            function my(){
+            axios.get("https://fakestoreapi.com/products").then(function(res){
+               products=res.data;
+                console.log(products)
+                gen(products);
+            })
+        }
+               function gen(arr)
+                 {
+                    ol.innerHTML="";
+                   arr.forEach(function(p)
+                  {
+                    var li1=document.createElement("li");
+                    li1.innerHTML=p.category;
+                    ol.appendChild(li1)
+                  })
+                
+                }
+                function gf(){
+                    var d=document.getElementById("w").value;
+                   var j=products.filter(function(a,b){
+                    console.log(d)
+                    return(a.category.startsWith(d))
+                   })
+                   gen(j);
+                }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <input type="text" id="ip" onkeyup="abc()">
+        <button onclick="mycountry()">click</button>
+        <table border="1px",padding=20px>
+            <tr>
+                <th>country name</th>
+                <th>captial</th>
+                <th>population</th>
+                <th>border</th>
+                <th>area</th>
+                <th>Flage</th>
+            </tr>
+            <tbody id="jk"></tbody>
+        </table>
+        <script>
+            function mycountry(){
+                $.get("https://restcountries.com/v3/all",
+                function(country,status){
+                    console.log(country);
+                    country.forEach(function(countries)
+                    {
+                    var tr1=document.createElement("tr");
+                    var td1=document.createElement("td")
+                    td1.innerHTML=countries.name.common;
+                    tr1.appendChild(td1);
+                    var td2=document.createElement("td")
+                    td2.innerHTML=countries.capital;
+                    tr1.appendChild(td2);
+                    var td3=document.createElement("td")
+                    td3.innerHTML=countries.population;
+                    tr1.appendChild(td3);
+                    var td4=document.createElement("td")
+                    td4.innerHTML=countries.borders;
+                    tr1.appendChild(td4);
+                    var td5=document.createElement("td")
+                    td5.innerHTML=countries.area;
+                    tr1.appendChild(td5);
+                    var td6=document.createElement("td")
+                    var image=document.createElement("img");
+                    image.style.width="50px"
+                    image.style.height="50px"
+                    image.style.borderRadius="50%"
+                    image.src=countries.flags[0]
+                    td6.appendChild(image);
+                    tr1.appendChild(td6);
+                    document.getElementById("jk").appendChild(tr1);
+                    })
+                    genUI()
+                })
+            }
+            function abc(){
+                var string=ip.value;
+                var n=countries.filter(function(){
+                    return(a.starswith(s))
+                })
+                genUI()
+            }
+        </script>
+    </body>
+</html>

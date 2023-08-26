@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <input type="text" id="dd" onclick="abc()">
+        <ul id="ol"></ul>
+        
+        <script>
+            var ar=["apple","orange"]
+            function genUI(){
+            ar.forEach(function(s,i){
+                var li1=document.createElement("li")
+                li1.innerHTML=s;
+                document.getElementById("ol").appendChild(li1);
+            })
+        }
+            var n=ar.filter(function(a,i){
+            var str=dd.value;
+            return(a.startsWith(str))
+        })
+        genUI(n
+        )
+
+        </script>
+    </body>
+</html>

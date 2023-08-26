@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" int egrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        #d1{
+            display: flex;
+            flex-wrap :wrap;
+            justify-content:space-between
+        }
+        #d1 li {
+            width : 200px ;
+            list-style: none;
+            font-size: 20px;
+            border:1px solid;
+            margin :10px;
+            text-align: center;
+            font-family: arial;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 2px 2px 10px;
+        }
+        
+        
+        #d1 li img{
+            width: 100%;
+            display: block;
+            overflow: hidden;
+        }
+    </style>
+    <body>
+        <button onclick="abc()">Get Countries</button>
+        <input type="text" id="rf" onkeyup="xyz()">
+        <ul id="d1"></ul>
+        <script>
+            var z=[]
+            var u=document.getElementById("d1")
+            
+            function abc(){
+                $.get("https://restcountries.com/v3/all",function(countries,b){
+                    z=countries
+                    console.log(countries)
+                    genUI(z);
+                    
+                })
+            
+            }
+
+            function genUI(x){
+                u.innerHTML=""
+                    x.forEach(function(country){
+                        var newli = document.createElement("li")
+                        var cn = document.createElement("h5")
+                        cn.innerHTML = country.name.common;
+                        newli.appendChild(cn)
+                        var cp = document.createElement("div")
+                        cp.innerHTML = "Population:"+country.population;
+                        newli.appendChild(cp)
+                        var cc = document.createElement("div")
+                        cc.innerHTML = "Capital:"+country.capital;
+                        newli.appendChild(cc)
+                        var flg = document.createElement("img");
+                        flg.src = country.flags[0];
+                        newli.appendChild(flg)
+                        u.appendChild(newli)
+                    })
+                }
+            function xyz(){
+                var r=document.getElementById("rf")
+
+                var s=r.value;
+                /* console.log(s)
+                console.log(z) */
+                var n=z.filter(function(a,b){
+                    return(a.name.common.toLowerCase().startsWith(s.toLowerCase()))
+                });
+                console.log(n)
+                genUI(n)
+            }
+        </script>
+    </body>
+</html>

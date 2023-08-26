@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button onclick="mycountry()">click</button>
+        <script>
+            function mycountry(){
+                $.get("https://restcountries.com/v3/all",
+                function(country,status){
+                    console.log(country);
+                    country.forEach(function(countries)
+                    {
+                   
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>
