@@ -1,6 +1,7 @@
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" int egrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+     <script src="https://code.jquery.com/jquery-3.7.0.min.js" int egrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     </head>
     <style>
         #d1{
@@ -45,16 +46,21 @@
                 })
             
             }
+            function b(){
+              alert ("hi") 
+            }
 
             function genUI(x){
                 u.innerHTML=""
                     x.forEach(function(country){
                         var newli = document.createElement("li")
-                        var cn = document.createElement("h5")
-                        cn.innerHTML = country.name.common;
-                        newli.appendChild(cn)
+                        // var cn = document.createElement("h5")
+                        var button=document.createElement("button");
+                        button.onclick=(()=>{b()});
+                        button.innerHTML = country.name.common;
+                        newli.appendChild(button)
                         var cp = document.createElement("div")
-                        cp.innerHTML = "Population:"+country.population;
+                        cp.innerHTML = "Population:"+country.population; 
                         newli.appendChild(cp)
                         var cc = document.createElement("div")
                         cc.innerHTML = "Capital:"+country.capital;
@@ -67,10 +73,7 @@
                 }
             function xyz(){
                 var r=document.getElementById("rf")
-
                 var s=r.value;
-                /* console.log(s)
-                console.log(z) */
                 var n=z.filter(function(a,b){
                     return(a.name.common.toLowerCase().startsWith(s.toLowerCase()))
                 });
