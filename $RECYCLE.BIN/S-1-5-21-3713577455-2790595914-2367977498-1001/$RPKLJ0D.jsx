@@ -1,0 +1,1 @@
+export const genral=["order","un-order","list","lists","new"]

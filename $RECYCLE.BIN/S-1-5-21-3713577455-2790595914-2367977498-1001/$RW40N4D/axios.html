@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <title>
+            Axios
+        </title>
+       <style>
+        #lk{
+            border: 2px solid green;
+        }
+       </style>
+    </head>
+    <body>
+        <button onclick="abc()">click</button>
+        <table s>
+            <tr id="lk">
+                <th>Id</th>
+                <th>Title</th>
+                <th>category</th>
+                <th>description</th>
+                <th>price</th>
+            </tr>
+            <tbody id="kl"></tbody>
+        </table>
+        <script>
+            var products=[]
+            function abc(){
+                axios.get("https://fakestoreapi.com/products").then(function(res){
+                    products=res.data;
+                    console.log(products)
+                    gen(products);
+                });
+            }
+            var tbody=document.getElementById("kl");
+            var tr1=document.createElement("tr");
+            var td1=document.createElement("td");
+            var td2=document.createElement("td");
+            var td3=document.createElement("td");
+            var td4=document.createElement("td");
+            var td5=document.createElement("td");
+            var image=document.createElement("img");
+            function gen(arr){
+                arr.forEach((p)=>{
+                    td1.innerHTML=p.id;
+                    td2.innerHTML=p.title;
+                    td3.innerHTML=p.category;
+                    td4.innerHTML=p.description;
+                    td5.innerHTML=p.price;
+                    tr1.appendChild(td1);
+                    tr1.appendChild(td2);
+                    tr1.appendChild(td3);
+                    tr1.appendChild(td4);
+                    tr1.appendChild(td5);
+                    tbody.appendChild(tr1);
+                });
+            }
+        </script>
+    </body>
+</html>

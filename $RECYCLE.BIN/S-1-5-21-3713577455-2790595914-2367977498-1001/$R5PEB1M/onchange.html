@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>event handler & onchange</title>
+</head>
+<body>
+    <form>
+        <label >Choose a color:</label>
+        <select id="color" name="color" onchange="colorChanged()">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </form>
+    <script>
+        function colorChanged() {
+            var color = document.getElementById("color").value;
+            alert("You selected: " + color);
+        }
+    </script>
+</body>
+</html>

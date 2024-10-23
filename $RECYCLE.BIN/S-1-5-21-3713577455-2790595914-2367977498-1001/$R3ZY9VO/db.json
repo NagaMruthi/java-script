@@ -1,0 +1,383 @@
+
+{
+  "admins": [
+    "nagamaruthi567@gmail.com"
+  ],
+  "hospitals": [
+    {
+      "hospitalName": "HOSPITAL",
+      "image": "https://img.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697328000&semt=sph",
+      "area": "kukatpally",
+      "reviews": [],
+      "bedTypes": [
+        {
+          "bedType": "general",
+          "price": "4500"
+        },
+        {
+          "bedType": "icu",
+          "price": "5500"
+        }
+      ],
+      "beds": [
+        {
+          "bedStatus": "occupied",
+          "bedtype": "",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "1"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "username": "vamsi",
+              "mobile": "9676853595",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "2"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "useremail": "nagamaruthi567@gmail.com",
+              "name": "Nagamaruthi K",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "3"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "4"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "5500",
+          "patients": [
+            {
+              "useremail": "nagamaruthi567@gmail.com",
+              "name": "Nagamaruthi K",
+              "status": "ongoing"
+            },
+            {
+              "username": "maruthi",
+              "mobile": "9347761828",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu1"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "5500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu2"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "5500",
+          "patients": [
+            {
+              "useremail": "nagamaruthi567@gmail.com",
+              "name": "Nagamaruthi K",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu3"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "5500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu4"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "5500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu5"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "vamsi",
+              "mobile": "456789925",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu6"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "babu",
+              "mobile": "7899455566",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu7"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu8"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu9"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu10"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "tarun kumar",
+              "mobile": "7894561235",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu11"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "maruthi",
+              "mobile": "8688585306",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu12"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu13"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "maruthi",
+              "mobile": "9347761828",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu14"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "45000",
+          "patients": [
+            {
+              "username": "vishnu vardhan",
+              "mobile": "7894562586",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu15"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu16"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu17"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "username": "maruthi",
+              "mobile": "9347761828",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu18"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "username": "maruti",
+              "mobile": "8653286532",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu19"
+        },
+        {
+          "bedStatus": "open",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [],
+          "bedId": "icu20"
+        },
+        {
+          "bedStatus": "open",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [],
+          "bedId": "icu21"
+        },
+        {
+          "bedStatus": "open",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [],
+          "bedId": "icu22"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "username": "vvvvv",
+              "mobile": "12345",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu23"
+        },
+        {
+          "bedStatus": "open",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [],
+          "bedId": "icu24"
+        },
+        {
+          "bedStatus": "occupied",
+          "bedtype": "icu",
+          "bedPrice": "4500",
+          "patients": [
+            {
+              "useremail": "kolusunagamaruthi42@gmail.com",
+              "name": "Kolusu Nagamaruthi",
+              "status": "ongoing"
+            }
+          ],
+          "bedId": "icu25"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

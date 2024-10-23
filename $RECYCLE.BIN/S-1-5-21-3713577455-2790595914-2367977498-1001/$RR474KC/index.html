@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="text" onkeyup="xyz()" id="kl">
+    <button onclick="acen()">acending</button>
+    <button onclick="dec()">decending</button>
+    <table id="gh" border="1px">
+        <thead>
+            <tr>
+                <td>category</td>
+                <td>rate</td>
+                <td>img</td>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+    <button onclick="mycountry()">click</button>
+    <script>
+        var tb1=document.getElementById("tb")
+        var x=[];
+        function mycountry(){
+            $.get("https://fakestoreapi.com/products", function (products, status) {
+                x=products;
+                console.log(x)
+                gentable(x)
+            })
+        }
+        function gentable(arr) {
+            tb.innerHTML = ""
+            arr.forEach(function (p) {
+                var tr1 = document.createElement("tr");
+                var td1 = document.createElement("td")
+                var td2 = document.createElement("td")
+                var td5 = document.createElement("td")
+                var im = document.createElement("img")
+                im.style.width = "50px"
+                im.style.height = "50px"
+                im.style.borderRadius = "50%"
+                td1.innerHTML = p.category
+                tr1.appendChild(td1)
+                td2.innerHTML = p.price
+                tr1.appendChild(td2)
+                td5.appendChild(im)
+                im.src = p.image;
+                td5.appendChild(im)
+                tr1.appendChild(td5)
+                tb1.appendChild(tr1)
+            })
+        }
+        function xyz(){
+            var r=document.getElementById("kl").value;
+           var n=x.filter(function(c,b){
+            return(c.category.startsWith(r))
+            console.log(r)
+            })
+            gentable(n);
+        }
+        function acen() {
+          var o=x.sort(function (a,b) {
+                if (a.category> b.category) {
+                    return 1;
+                }
+                if (a.category<b.category) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(o);
+        }
+        function dec() {
+       var z=x.sort(function (a,b) {
+                if (a.category<b.category) {
+                    return 1;
+                }
+                if (a.category>b.category) {
+                    return -1;
+                }
+                return 0;
+            });
+            gentable(z);
+        }
+    </script>
+</body>
+</html> 

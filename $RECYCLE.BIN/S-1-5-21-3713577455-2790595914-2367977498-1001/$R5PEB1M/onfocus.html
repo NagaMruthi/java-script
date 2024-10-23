@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>event handler& onfocus Example</title>
+    <style>
+        .focused {
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Click to focus">
+
+    <script>
+        // Get the input element
+        const myInput = document.getElementById('myInput');
+        function handleFocus() {
+            this.classList.add('focused');
+            console.log('Input field is focused');
+        }
+        myInput.onfocus = handleFocus;
+    </script>
+</body>
+</html>

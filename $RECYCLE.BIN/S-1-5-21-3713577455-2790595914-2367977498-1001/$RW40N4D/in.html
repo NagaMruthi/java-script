@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my pages</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <ul id="kl">
+        </ul>
+        <script>
+            var products=[];
+            axios.get("https://fakestoreapi.com/products").then(function(res){
+                products=res.data
+                console.log(res);
+                gen(products.data);
+            });
+            function gen(arr){
+                var lu=document.getElementById("kl");
+                var li1=document.createElement("li");
+                var li2=document.createElement("li");
+                arr.data.forEach(element => {
+                    li1.innerHTML=element.status;
+                    console.log(element.data)
+                    lu.appendChild(li1)
+                });
+            }
+        </script>
+    </body>
+</html>

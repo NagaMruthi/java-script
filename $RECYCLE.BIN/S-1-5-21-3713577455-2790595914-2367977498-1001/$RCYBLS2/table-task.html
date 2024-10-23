@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table-task</title>
+        <style>
+            table,tr,td{
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Main Table row 1 column 1</td>
+                <td style="text-align: center;">Main Table row 2 column 1
+                    <table>
+                        <tr>
+                            <td>Inner Table row 1 column 1</td>
+                            <td>Inner Table row 2 column 1</td>
+                            <td>Inner Table row 3 column 1</td>
+                        </tr>
+                        <tr>
+                            <td>Inner Table row 2 column 2</td>
+                            <td>Inner Table row 2 column 2</td>
+                            <td>Inner Table row 2 column 2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Main column 2</td>
+                <td style="text-align: center;">Main Table row 2 column 2</td>
+            </tr>
+        </table>
+    </body>
+</html>
