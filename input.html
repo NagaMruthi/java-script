@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Type</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Light background for better visibility */
+        }
+        .container {
+            text-align: center;
+            background-color: rebeccapurple;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+            color: rebeccapurple;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="kl1">Student Name:</label>
+        <input type="text" class="Name" id="kl1">
+        
+        <label for="kl2">Student Id:</label>
+        <input type="text" class="id" id="kl2">
+        
+        <label for="kl3">Branch:</label>
+        <input type="text" class="branch" id="kl3">
+        
+        <label for="kl4">Student Joining Date:</label>
+        <input type="text" class="joining year" id="kl4">
+        
+        <button onclick="abc()">Submit</button>
+    </div>
+
+    <script>
+        var arr = [];
+        function abc() {
+            var ip1 = document.getElementById("kl1");
+            var ip2 = document.getElementById("kl2");
+            var ip3 = document.getElementById("kl3");
+            var ip4 = document.getElementById("kl4");
+            
+            alert("hi");
+            
+            var x = {
+                Name: ip1.value,
+                Id: ip2.value,
+                Branch: ip3.value,
+                JoiningDate: ip4.value
+            };
+            
+            arr.push(x);
+            console.log(arr);
+            ip1.value="";
+        }
+    </script>
+</body>
+</html>

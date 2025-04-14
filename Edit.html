@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Options</title>
+        <style>
+            .my{
+                border: 3px solid black;
+                
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="my" >
+            <input type="text" placeholder="enter the value" id="ip" style="align-content: center;">
+            <button onclick="Add()">Add</button>
+            <h1 id="kl"></h1>
+        </div>
+        <script>
+            var n=["maruthi"];
+            var ip=document.getElementById("ip")
+            function Add(){
+                n.push(ip.value);
+                document.getElementById("ip").value='';
+                genui(n);
+            };
+            function genui(arr){
+                console.log(arr);
+                var li=document.createElement("li");
+                var di=document.getElementById("kl");
+                var b1=document.createElement("button");
+                b1.innerHTML="edit"
+                arr.forEach((res,i) => {
+                li.innerHTML=res;
+                li.appendChild(b1);
+                    di.appendChild(li)
+                });
+            }
+        </script>
+    </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Options</title>
+        <style>
+            .my{
+                border: 3px solid black;
+                text-align: center; /* To center-align the content horizontally */
+                padding: 20px; /* Add padding for better spacing */
+                width: 400px; /* Set a fixed width for the container */
+                margin:0 auto; /* Center the container horizontally */
+            }
+
+            input[type="text"] {
+                width: 70%; /* Adjust the width of the input field */
+                margin-bottom: 10px; /* Add some space below the input field */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="my" >
+            <input type="text" placeholder="enter the value" id="ip">
+            <button onclick="Add()">Add</button>
+            <ul id="kl"></ul> 
+        </div>
+        <script>
+            var n = ["maruthi"];
+            var ip = document.getElementById("ip");
+            function Add() {
+                n.push(ip.value);
+                ip.value = '';
+                genui(n);
+            };
+            function s(i){
+                alert(i);
+                n.splice(i,1);
+                genui(n)
+            }
+            function E(i) {
+                var x=n[i]
+                ip.innerHTML=x
+        console.log(x)
+        genui(n);
+    
+}
+
+            function genui(arr) {
+                var di = document.getElementById("kl");
+                di.innerHTML = ''; // Clear previous content
+                arr.forEach((res, i) => {
+                    var li = document.createElement("li");
+                    li.innerHTML = res;
+                    var b1 = document.createElement("button");
+                    var b2 = document.createElement("button");
+                    b1.innerHTML = "edit";
+                    b2.innerHTML = "X";
+                    b1.onclick=(()=>{E(i)})
+                    b2.onclick=(()=>{s(i)})
+                    li.appendChild(b1);
+                    li.appendChild(b2);
+                    di.appendChild(li);
+                });
+            }
+        </script>
+    </body>
+</html>
+
+    <!-- function E(i) {
+        alert("edit option" + i);
+        var newValue = prompt("Enter the new value:", n[i]);
+        if (newValue !== null) {
+            n[i] = newValue;
+            genui(n);
+        }
+    } -->
+   
